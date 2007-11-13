@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source.
- * Copyright 2006, Red Hat Middleware LLC, and individual contributors
+ * Copyright 2007, Red Hat Middleware LLC, and individual contributors
  * as indicated by the @author tags. See the copyright.txt file in the
  * distribution for a full listing of individual contributors.
  *
@@ -26,18 +26,17 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.jboss.ejb3.cache.StatefulCache;
-import org.jboss.ejb3.stateful.StatefulBeanContext;
-
 /**
- * Annotation for specifying the class used to provide the caching mechanism for a bean
- *
- * @author <a href="mailto:bill@jboss.org">Bill Burke</a>
- * @version $Revision: 65272 $
+ * Cache
+ * 
+ * Annotation used to specify Cache implementation
+ * 
+ * @author <a href="mailto:andrew.rubinger@redhat.com">ALR</a>
+ * @version $Revision: 66977 $
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
 public @interface Cache
 {
-   Class<? extends StatefulCache> value();
+   String value();
 }
