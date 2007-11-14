@@ -26,19 +26,17 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.jboss.ejb3.Pool;
-
 /**
  * Annotation for specifying the pool class to manage thread pooling for a bean
  *
  * @author <a href="mailto:bill@jboss.org">Bill Burke</a>
- * @version $Revision: 61136 $
+ * @version $Revision: 67042 $
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
-public @interface PoolClass
+public @interface Pool
 {
-   Class<? extends Pool> value();
+   String value();
    int maxSize() default 30;
    long timeout()default Long.MAX_VALUE;
 }
