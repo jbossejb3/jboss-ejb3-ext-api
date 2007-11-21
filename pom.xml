@@ -11,7 +11,7 @@
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>jboss-ejb3-ext-api</groupId>
+  <groupId>org.jboss.ejb3</groupId>
   <artifactId>jboss-ejb3-ext-api</artifactId>
   <name>JBoss EJB 3 External API</name>
 
