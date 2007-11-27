@@ -5,8 +5,4 @@
   <classpathentry kind="src" path="src/test/resources" output="eclipse-target/tests-classes" excluding="**/*.java"/>
   <classpathentry kind="output" path="eclipse-target/classes"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/javaee/jboss-transaction-api/1.0.1.20070913080910/jboss-transaction-api-1.0.1.20070913080910.jar" sourcepath="M2_REPO/org/jboss/javaee/jboss-transaction-api/1.0.1.20070913080910/jboss-transaction-api-1.0.1.20070913080910-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/jboss/jbossws/jboss-jaxrpc/1.0.4.GA/jboss-jaxrpc-1.0.4.GA.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/javaee/jboss-ejb-api/3.0.0.20070913080910/jboss-ejb-api-3.0.0.20070913080910.jar" sourcepath="M2_REPO/org/jboss/javaee/jboss-ejb-api/3.0.0.20070913080910/jboss-ejb-api-3.0.0.20070913080910-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar" sourcepath="M2_REPO/junit/junit/3.8.1/junit-3.8.1-sources.jar"/>
 </classpath>
