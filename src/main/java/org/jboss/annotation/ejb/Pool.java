@@ -26,6 +26,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jboss.ejb3.defaults.PoolDefaults;
+
 /**
  * Annotation for specifying the pool class to manage thread pooling for a bean
  *
@@ -36,7 +38,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 public @interface Pool
 {
-   String value();
-   int maxSize() default 30;
+   String value() default PoolDefaults.POOL_IMPLEMENTATION_THREADLOCAL;
+   int maxSize() default PoolDefaults.DEFAULT_POOL_SIZE;
    long timeout()default Long.MAX_VALUE;
 }
