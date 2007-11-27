@@ -15,8 +15,7 @@
   <artifactId>jboss-ejb3-ext-api</artifactId>
   <name>JBoss EJB 3 External API</name>
 
-  <!-- TODO: we may need to release separately -->
-  <!-- version>0.11.0-SNAPSHOT</version -->
+  <version>0.1.1-SNAPSHOT</version>
   <description>JBoss EJB 3 API for Bean Providers</description>
   <url>http://labs.jboss.com/jbossejb3/</url>
 
