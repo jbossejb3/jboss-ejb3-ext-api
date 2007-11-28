@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source.
- * Copyright 2007, Red Hat Middleware LLC, and individual contributors
+ * Copyright 2006, Red Hat Middleware LLC, and individual contributors
  * as indicated by the @author tags. See the copyright.txt file in the
  * distribution for a full listing of individual contributors.
  *
@@ -19,31 +19,26 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.ejb3.jndipolicy;
+package org.jboss.ejb3.annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 
 /**
- * Defines the contract required for implementations of a default JNDI binding policy
- * 
- * @author <a href="mailto:andrew.rubinger@redhat.com">ALR</a>
- * @version $Revision: $
+ * Annotation for specifying the message properties for a Consumer bean.  It is placed
+ * on the Producer interfaces.
+ *
+ * @author <a href="mailto:bill@jboss.org">Bill Burke</a>
  */
-public interface DefaultJndiBindingPolicy
+@Target({ElementType.METHOD, ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MessageProperties
 {
-   /**
-    * Returns the JNDI name that should be assigned to this deployment
-    * based on the information contained in the specified summary
-    * 
-    * @param summary
-    * @return
-    */
-   String getJndiName(Ejb3DeploymentSummary summary);
-   
-   String getDefaultRemoteJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultRemoteHomeJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultLocalHomeJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultLocalJndiName(Ejb3DeploymentSummary summary);
+   DeliveryMode delivery() default DeliveryMode.PERSISTENT;
+   int timeToLive() default 0;
+   int priority() default 4;
+   Class getInterface() default MessageProperties.class;
 }

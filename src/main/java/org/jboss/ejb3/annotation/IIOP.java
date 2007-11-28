@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source.
- * Copyright 2007, Red Hat Middleware LLC, and individual contributors
+ * Copyright 2006, Red Hat Middleware LLC, and individual contributors
  * as indicated by the @author tags. See the copyright.txt file in the
  * distribution for a full listing of individual contributors.
  *
@@ -19,31 +19,29 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.ejb3.jndipolicy;
+package org.jboss.ejb3.annotation;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * Defines the contract required for implementations of a default JNDI binding policy
- * 
- * @author <a href="mailto:andrew.rubinger@redhat.com">ALR</a>
- * @version $Revision: $
+ * This annotation binds a bean into Corba.
+ *
+ * @author <a href="mailto:carlo.dewolf@jboss.com">Carlo de Wolf</a>
+ * @version $Revision: 61136 $
  */
-public interface DefaultJndiBindingPolicy
-{
-   /**
-    * Returns the JNDI name that should be assigned to this deployment
-    * based on the information contained in the specified summary
-    * 
-    * @param summary
-    * @return
-    */
-   String getJndiName(Ejb3DeploymentSummary summary);
+@Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface IIOP {
+   final String POA_SHARED = "shared";
+   final String POA_PER_SERVANT = "per-servant";
    
-   String getDefaultRemoteJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultRemoteHomeJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultLocalHomeJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultLocalJndiName(Ejb3DeploymentSummary summary);
+   boolean interfaceRepositorySupported() default false;
+   
+   /**
+    * per-servant or shared portable object adapter
+    */
+   String poa() default POA_PER_SERVANT;
 }

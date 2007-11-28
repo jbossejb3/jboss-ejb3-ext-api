@@ -19,31 +19,34 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.ejb3.jndipolicy;
+package org.jboss.ejb3.annotation;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+import org.jboss.ejb3.jndipolicy.DefaultJndiBindingPolicy;
 
 /**
- * Defines the contract required for implementations of a default JNDI binding policy
+ * Annotation for specifying that an EJB should use a 
+ * specified JNDI Binding Policy when determining default 
+ * JNDI names.  This policy may be overridden through optional 
+ * use of @RemoteBinding, @RemoteBindings, @RemoteHomeBinding, 
+ * @LocalBinding, @LocalBindings, @LocalHomeBinding
  * 
  * @author <a href="mailto:andrew.rubinger@redhat.com">ALR</a>
  * @version $Revision: $
  */
-public interface DefaultJndiBindingPolicy
-{
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface JndiBindingPolicy {
+
    /**
-    * Returns the JNDI name that should be assigned to this deployment
-    * based on the information contained in the specified summary
+    * The JNDI Binding Policy that will be used 
     * 
-    * @param summary
     * @return
     */
-   String getJndiName(Ejb3DeploymentSummary summary);
+   Class<? extends DefaultJndiBindingPolicy> policy();
    
-   String getDefaultRemoteJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultRemoteHomeJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultLocalHomeJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultLocalJndiName(Ejb3DeploymentSummary summary);
 }

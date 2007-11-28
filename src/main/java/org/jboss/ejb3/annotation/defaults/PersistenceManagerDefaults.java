@@ -19,31 +19,23 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.ejb3.jndipolicy;
-
+package org.jboss.ejb3.annotation.defaults;
 
 /**
- * Defines the contract required for implementations of a default JNDI binding policy
+ * Default values for the @PersistenceManager annotation
  * 
- * @author <a href="mailto:andrew.rubinger@redhat.com">ALR</a>
- * @version $Revision: $
+ * @author <mailto:andrew.rubinger@redhat.com>ALR</a>
+ * @version $Revision $
  */
-public interface DefaultJndiBindingPolicy
+public interface PersistenceManagerDefaults
 {
-   /**
-    * Returns the JNDI name that should be assigned to this deployment
-    * based on the information contained in the specified summary
-    * 
-    * @param summary
-    * @return
+   // PersistenceManager Implementations
+
+   /*
+    * These keys are configured
+    * in the EJB3 Deployer Deployment file (ejb3-deployers-beans.xml)
+    * under the EJB3PersistenceManagerFactoryRegistry 
     */
-   String getJndiName(Ejb3DeploymentSummary summary);
-   
-   String getDefaultRemoteJndiName(Ejb3DeploymentSummary summary);
 
-   String getDefaultRemoteHomeJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultLocalHomeJndiName(Ejb3DeploymentSummary summary);
-
-   String getDefaultLocalJndiName(Ejb3DeploymentSummary summary);
+   String PERSISTENCE_MANAGER_IMPLEMENTATION_STATEFUL_SESSION_FILE = "StatefulSessionFilePersistenceManager";
 }
