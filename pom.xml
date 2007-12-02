@@ -5,17 +5,10 @@
 
    <!-- Define Parent -->
    <parent>
-      
-      <groupId>org.jboss</groupId>
-      <artifactId>jboss-parent</artifactId>
-      <version>3</version>
-      
-      <!-- 
-      <artifactId>jboss-ejb3</artifactId>
-      <groupId>org.jboss.ejb3</groupId>
-      <version>0.11.0-SNAPSHOT</version>
-      <relativePath>../build/pom.xml</relativePath>
-       -->
+         <artifactId>jboss-ejb3</artifactId>
+         <groupId>org.jboss.ejb3</groupId>
+         <version>0.11.0-SNAPSHOT</version>
+         <relativePath>../build/pom.xml</relativePath>
    </parent>
 
    <!-- Maven POM Model Version -->
@@ -74,7 +67,7 @@
       <dependency>
          <groupId>org.jboss.javaee</groupId>
          <artifactId>jboss-ejb-api</artifactId>
-         <version>3.0.0</version>
+         <version>3.0.0.20070913080910</version>
       </dependency>
    </dependencies>
 
