@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
    <!-- Define Parent -->
    <parent>
@@ -28,12 +30,22 @@
 
    <!-- SCM -->
    <scm>
-      <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/ejb3/trunk/</connection>
-      <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/ejb/trunk/</developerConnection>
-      <url>http://viewvc.jboss.org/cgi-bin/viewvc.cgi/jbossas/projects/ejb3/trunk/</url>
+      <connection>
+         scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/ejb3/trunk/
+      </connection>
+      <developerConnection>
+         scm:svn:https://svn.jboss.org/repos/jbossas/projects/ejb/trunk/
+      </developerConnection>
+      <url>
+         http://viewvc.jboss.org/cgi-bin/viewvc.cgi/jbossas/projects/ejb3/trunk/
+      </url>
    </scm>
 
-
+   <!-- 
+      
+      NOTE: This section should likely be configured in the parent
+      
+   -->
    <build>
       <plugins>
 
