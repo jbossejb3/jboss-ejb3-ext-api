@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.ejb3;
+package org.jboss.ejb3.jndipolicy;
 
 import java.io.Serializable;
 
@@ -35,21 +35,21 @@ public class Ejb3DeploymentSummary implements Serializable
    // Instance Members
 
    private String deploymentName;
-   
+
    private String deploymentScopeBaseName;
-   
+
    private String ejbName;
-   
+
    private Class<?> beanClass;
-   
+
    private boolean isLocal;
-   
+
    private boolean isStateful;
-   
+
    private boolean isHome;
-   
+
    private boolean isService;
-   
+
    // Accessors / Mutators
 
    public String getDeploymentName()
@@ -131,6 +131,5 @@ public class Ejb3DeploymentSummary implements Serializable
    {
       this.beanClass = beanClass;
    }
-   
-   
+
 }

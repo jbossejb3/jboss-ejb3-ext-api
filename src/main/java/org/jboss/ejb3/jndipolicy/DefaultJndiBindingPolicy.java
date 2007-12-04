@@ -21,8 +21,6 @@
  */
 package org.jboss.ejb3.jndipolicy;
 
-import org.jboss.ejb3.Ejb3DeploymentSummary;
-
 /**
  * Defines the contract required for implementations of a default JNDI binding policy
  * 
@@ -39,7 +37,7 @@ public interface DefaultJndiBindingPolicy
     * @return
     */
    String getJndiName(Ejb3DeploymentSummary summary);
-   
+
    String getDefaultRemoteJndiName(Ejb3DeploymentSummary summary);
 
    String getDefaultRemoteHomeJndiName(Ejb3DeploymentSummary summary);
