@@ -28,9 +28,9 @@
 
    <!-- SCM -->
    <scm>
-      <connection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/ejb3/branches/ejb3-ext-api</connection>
-      <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/ejb3/branches/ejb3-ext-api</developerConnection>
-      <url>https://svn.jboss.org/repos/jbossas/projects/ejb3/branches/ejb3-ext-api</url>
+      <connection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/ejb3/tags/0.1.2</connection>
+      <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/ejb3/tags/0.1.2</developerConnection>
+      <url>https://svn.jboss.org/repos/jbossas/projects/ejb3/tags/0.1.2</url>
    </scm>
 
    <!-- 
