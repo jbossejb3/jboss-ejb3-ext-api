@@ -49,7 +49,6 @@
                <tagBase>
                   https://svn.jboss.org/repos/jbossas/projects/ejb3/tags
                </tagBase>
-               <branchName>ejb3-ext-api</branchName>
             </configuration>
          </plugin>
 
