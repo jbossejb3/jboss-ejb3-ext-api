@@ -19,12 +19,14 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.annotation.ejb;
+package org.jboss.ejb3.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+
+import org.jboss.ejb3.annotation.defaults.PoolDefaults;
 
 /**
  * Annotation for specifying the pool class to manage thread pooling for a bean
@@ -33,10 +35,12 @@ import java.lang.annotation.Target;
  * @version $Revision$
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE})
-public @interface Pool
-{
-   String value();
-   int maxSize() default 30;
-   long timeout()default Long.MAX_VALUE;
+@Target(
+{ElementType.TYPE})
+public @interface Pool {
+   String value() default PoolDefaults.POOL_IMPLEMENTATION_THREADLOCAL;
+
+   int maxSize() default PoolDefaults.DEFAULT_POOL_SIZE;
+
+   long timeout() default Long.MAX_VALUE;
 }

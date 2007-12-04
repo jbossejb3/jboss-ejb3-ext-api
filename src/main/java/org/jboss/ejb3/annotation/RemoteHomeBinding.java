@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.annotation.ejb;
+package org.jboss.ejb3.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -31,9 +31,9 @@ import java.lang.annotation.Target;
  *
  * @author <a href="mailto:bdecoste@jboss.com">William DeCoste</a>
  */
-@Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE})
+@Target(
+{ElementType.TYPE, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface RemoteHomeBinding
-{
+public @interface RemoteHomeBinding {
    String jndiBinding() default "";
 }

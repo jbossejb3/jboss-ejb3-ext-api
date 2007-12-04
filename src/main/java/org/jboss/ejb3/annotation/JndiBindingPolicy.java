@@ -48,5 +48,5 @@ public @interface JndiBindingPolicy {
     * @return
     */
    Class<? extends DefaultJndiBindingPolicy> policy();
-   
+
 }

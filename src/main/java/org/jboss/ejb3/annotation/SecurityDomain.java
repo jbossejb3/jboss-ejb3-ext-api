@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.annotation.security;
+package org.jboss.ejb3.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -36,10 +36,10 @@ import java.lang.annotation.Target;
  * @version $Revision$
  *
  **/
-@Target(ElementType.TYPE) @Retention(RetentionPolicy.RUNTIME)
-public @interface SecurityDomain
-{
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface SecurityDomain {
    String value();
-   
+
    String unauthenticatedPrincipal() default "";
 }

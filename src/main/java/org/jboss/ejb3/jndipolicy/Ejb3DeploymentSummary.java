@@ -32,6 +32,9 @@ import java.io.Serializable;
  */
 public class Ejb3DeploymentSummary implements Serializable
 {
+   // Class Members
+   private static final long serialVersionUID = 5282914558239425705L;
+
    // Instance Members
 
    private String deploymentName;

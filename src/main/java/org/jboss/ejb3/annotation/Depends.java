@@ -19,12 +19,12 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.annotation.ejb;
+package org.jboss.ejb3.annotation;
 
-import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * Annotation for specifying a deployment dependency for a bean.  If placed on a setter method or field
@@ -33,8 +33,9 @@ import java.lang.annotation.RetentionPolicy;
  * @author <a href="mailto:kabir.khan@jboss.org">Kabir Khan</a>
  * @version $Revision$
  */
-@Target({ElementType.TYPE, ElementType.METHOD, ElementType.FIELD}) @Retention(RetentionPolicy.RUNTIME)
-public @interface Depends
-{
+@Target(
+{ElementType.TYPE, ElementType.METHOD, ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Depends {
    String[] value();
 }

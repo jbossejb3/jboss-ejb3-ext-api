@@ -19,14 +19,14 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.annotation.ejb;
+package org.jboss.ejb3.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.jboss.ejb3.remoting.RemoteProxyFactory;
+import org.jboss.ejb3.annotation.defaults.RemoteBindingDefaults;
 
 /**
  * Annotation for specifying the remote jndi binding for a bean as well
@@ -37,15 +37,15 @@ import org.jboss.ejb3.remoting.RemoteProxyFactory;
  * @author <a href="mailto:bill@jboss.org">Bill Burke</a>
  * @version $Revision$
  */
-@Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE})
+@Target(
+{ElementType.TYPE, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface RemoteBinding
-{
+public @interface RemoteBinding {
    String jndiBinding() default "";
 
    String interceptorStack() default "";
 
    String clientBindUrl() default "";
 
-   Class<? extends RemoteProxyFactory> factory() default RemoteProxyFactory.class;
+   String factory() default RemoteBindingDefaults.PROXY_FACTORY_DEFAULT;
 }

@@ -19,13 +19,12 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.annotation.ejb;
+package org.jboss.ejb3.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-
 
 /**
  * Annotation for specifying the message properties for a Consumer bean.  It is placed
@@ -33,12 +32,15 @@ import java.lang.annotation.Target;
  *
  * @author <a href="mailto:bill@jboss.org">Bill Burke</a>
  */
-@Target({ElementType.METHOD, ElementType.TYPE})
+@Target(
+{ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MessageProperties
-{
+public @interface MessageProperties {
    DeliveryMode delivery() default DeliveryMode.PERSISTENT;
+
    int timeToLive() default 0;
+
    int priority() default 4;
-   Class getInterface() default MessageProperties.class;
+
+   Class<?> getInterface() default MessageProperties.class;
 }

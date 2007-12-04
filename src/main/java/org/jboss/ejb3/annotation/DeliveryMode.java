@@ -19,15 +19,13 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.jboss.annotation.ejb;
+package org.jboss.ejb3.annotation;
 
 /**
  * Enumeration for specifying the persistence of a JMS message
  *
  * @author <a href="mailto:bill@jboss.org">Bill Burke</a>
  */
-public enum DeliveryMode
-{
-   NON_PERSISTENT,
-   PERSISTENT
+public enum DeliveryMode {
+   NON_PERSISTENT, PERSISTENT
 }
