@@ -52,28 +52,6 @@
             </configuration>
          </plugin>
 
-         <!-- JBoss Deploy Plugin -->
-         <plugin>
-            <groupId>org.jboss.maven.plugins</groupId>
-            <artifactId>maven-jboss-deploy-plugin</artifactId>
-            <version>1.5</version>
-            <executions>
-               <execution>
-                  <goals>
-                     <goal>jboss-deploy</goal>
-                  </goals>
-               </execution>
-            </executions>
-            <configuration>
-               <jbossDeployRoot>
-                  ${jboss.repository.root}
-               </jbossDeployRoot>
-               <removeArtifactVersion>true</removeArtifactVersion>
-               <groupId>jboss</groupId>
-            </configuration>
-            <inherited>true</inherited>
-         </plugin>
-
       </plugins>
    </build>
 
