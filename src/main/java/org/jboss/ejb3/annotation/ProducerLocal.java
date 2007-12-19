@@ -34,6 +34,6 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.METHOD, ElementType.TYPE, ElementType.FIELD, ElementType.PARAMETER})
         @Retention(RetentionPolicy.RUNTIME)
-        public @interface Local
+        public @interface ProducerLocal
 {
 }
