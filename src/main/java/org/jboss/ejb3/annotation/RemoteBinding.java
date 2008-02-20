@@ -46,6 +46,8 @@ public @interface RemoteBinding {
    String interceptorStack() default "";
 
    String clientBindUrl() default "";
+   
+   String invokerName() default ""; 
 
    String factory() default RemoteBindingDefaults.PROXY_FACTORY_DEFAULT;
 }
