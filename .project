@@ -1,6 +1,6 @@
 <projectDescription>
   <name>jboss-ejb3-ext-api</name>
-  <comment>JBoss EJB 3 API for Bean Providers</comment>
+  <comment>JBoss EJB 3.0 API for Bean Providers</comment>
   <projects/>
   <buildSpec>
     <buildCommand>
