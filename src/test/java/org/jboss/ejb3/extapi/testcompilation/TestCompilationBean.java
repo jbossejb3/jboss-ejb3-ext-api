@@ -37,7 +37,7 @@ import org.jboss.ejb3.annotation.defaults.ClusteredDefaults;
 import org.jboss.ejb3.annotation.defaults.PersistenceManagerDefaults;
 import org.jboss.ejb3.annotation.defaults.PoolDefaults;
 import org.jboss.ejb3.annotation.defaults.RemoteBindingDefaults;
-import org.jboss.ejb3.jndipolicy.DefaultJndiBindingPolicy;
+import org.jboss.metadata.ejb.jboss.jndipolicy.spi.DefaultJndiBindingPolicy;
 
 /**
  * A Test Object for compilation only to ensure that the 
