@@ -14,7 +14,7 @@
   <!-- Artifact Information -->
   <groupId>org.jboss.ejb3</groupId>
   <artifactId>jboss-ejb3-ext-api</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>JBoss EJB 3.0 External API</name>
   <description>JBoss EJB 3.0 API for Bean Providers</description>
   <url>http://labs.jboss.com/jbossejb3/</url>
@@ -48,10 +48,4 @@
     </dependency>
     
   </dependencies>
-
-  <scm>
-    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/ejb3/tags/jboss-ejb3-ext-api-1.0.0</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/ejb3/tags/jboss-ejb3-ext-api-1.0.0</developerConnection>
-    <url>http://anonsvn.jboss.org/repos/jbossas/projects/ejb3/tags/jboss-ejb3-ext-api-1.0.0</url>
-  </scm>
 </project>
