@@ -26,6 +26,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jboss.ejb3.annotation.defaults.RemoteBindingDefaults;
+
 /**
  * Annotation for specifying the remote jndi binding for a bean as well
  * as the client interceptor stack, which is a stack-ref in JBoss AOP
@@ -45,5 +47,7 @@ public @interface RemoteBinding {
 
    String clientBindUrl() default "";
    
-   String invokerName() default "";
+   String invokerName() default ""; 
+
+   String factory() default RemoteBindingDefaults.PROXY_FACTORY_DEFAULT;
 }

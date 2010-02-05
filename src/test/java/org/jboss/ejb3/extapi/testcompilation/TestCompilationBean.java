@@ -36,6 +36,7 @@ import org.jboss.ejb3.annotation.TransactionTimeout;
 import org.jboss.ejb3.annotation.defaults.ClusteredDefaults;
 import org.jboss.ejb3.annotation.defaults.PersistenceManagerDefaults;
 import org.jboss.ejb3.annotation.defaults.PoolDefaults;
+import org.jboss.ejb3.annotation.defaults.RemoteBindingDefaults;
 import org.jboss.metadata.ejb.jboss.jndipolicy.spi.DefaultJndiBindingPolicy;
 
 /**
@@ -69,7 +70,7 @@ import org.jboss.metadata.ejb.jboss.jndipolicy.spi.DefaultJndiBindingPolicy;
 @Producers(
 {@Producer(producer = Producer.class, connectionFactory = "", transacted = true, acknowledgeMode = 1)})
 @ProducerLocal
-@RemoteBindings(@RemoteBinding(jndiBinding="remoteBinding", interceptorStack="",clientBindUrl=""))
+@RemoteBindings(@RemoteBinding(jndiBinding="remoteBinding", interceptorStack="",clientBindUrl="",factory=RemoteBindingDefaults.PROXY_FACTORY_DEFAULT))
 @RemoteHomeBinding(jndiBinding="remoteHomeBinding")
 @ResourceAdapter("resourceAdaptor")
 @RunAsPrincipal("principalName")
