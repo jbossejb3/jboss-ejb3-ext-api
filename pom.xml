@@ -1,51 +1,80 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <parent>
+      <groupId>org.jboss</groupId>
+      <artifactId>jboss-parent</artifactId>
+      <version>5</version>
+   </parent>
 
-  <!-- Define Parent -->
-  <parent>
-    <artifactId>jboss-ejb3-build</artifactId>
-    <groupId>org.jboss.ejb3</groupId>
-    <version>1.0.0</version>
-    <relativePath>../build/pom.xml</relativePath>
-  </parent>
+   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Maven POM Model Version -->
-  <modelVersion>4.0.0</modelVersion>
+   <groupId>org.jboss.ejb3</groupId>
+   <artifactId>jboss-ejb3-ext-api</artifactId>
+   <version>2.0.0-SNAPSHOT</version>
+   <name>JBoss EJB 3 Extension API</name>
+   <description>JBoss EJB 3 API for Bean Providers</description>
+   <url>http://www.jboss.org/ejb3/</url>
 
-  <!-- Artifact Information -->
-  <groupId>org.jboss.ejb3</groupId>
-  <artifactId>jboss-ejb3-ext-api</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
-  <name>JBoss EJB 3.0 External API</name>
-  <description>JBoss EJB 3.0 API for Bean Providers</description>
-  <url>http://labs.jboss.com/jbossejb3/</url>
+   <dependencies>
+      <dependency>
+         <groupId>${javax.ejb.groupId}</groupId>
+         <artifactId>${javax.ejb.artifactId}</artifactId>
+         <version>${javax.ejb.version}</version>
+      </dependency>
+   </dependencies>
 
-  <!-- Dependencies -->
+   <developers>
+      <developer>
+         <name>Carlo de Wolf</name>
+         <email>cdewolf@redhat.com</email>
+         <organization>JBoss, a division of Red Hat, Inc.</organization>
+         <organizationUrl>http://www.jboss.com</organizationUrl>
+         <roles>
+            <role>Project Lead</role>
+         </roles>
+         <timezone>+1</timezone>
+      </developer>
+      <developer>
+         <name>Andrew Lee Rubinger</name>
+         <email>andrew.rubinger@redhat.com</email>
+         <organization>JBoss, a division of Red Hat, Inc.</organization>
+         <organizationUrl>http://www.jboss.com</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>-5</timezone>
+      </developer>
+      <developer>
+         <name>Jaikiran Pai</name>
+         <email>jpai@redhat.com</email>
+         <organization>JBoss, a division of Red Hat, Inc.</organization>
+         <organizationUrl>http://www.jboss.com</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>+5:30</timezone>
+      </developer>
+   </developers>
 
-  <!-- 
-    
-    Version information is centralized in 
-    the Parent Build POM
-    
-  -->
+   <issueManagement>
+      <system>jira</system>
+      <url>https://issues.jboss.org/browse/EJBTHREE</url>
+   </issueManagement>
 
-  <dependencies>
+   <properties>
+      <javax.ejb.groupId>org.jboss.spec.javax.ejb</javax.ejb.groupId>
+      <javax.ejb.artifactId>jboss-ejb-api_3.1_spec</javax.ejb.artifactId>
+      <javax.ejb.version>1.0.0.Final</javax.ejb.version>
 
-    <!-- JUnit -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
+      <javax.interceptor.groupId>org.jboss.spec.javax.interceptor</javax.interceptor.groupId>
+      <javax.interceptor.artifactId>jboss-interceptors-api_1.1_spec</javax.interceptor.artifactId>
+      <javax.interceptor.version>1.0.0.Final</javax.interceptor.version>
+   </properties>
 
-    <!-- JavaEE EJB3 API -->
-    <dependency>
-      <groupId>org.jboss.javaee</groupId>
-      <artifactId>jboss-ejb-api</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jboss.metadata</groupId>
-      <artifactId>jboss-metadata</artifactId>
-    </dependency>
-    
-  </dependencies>
+   <scm>
+      <connection>scm:git:git://github.com/jbossejb3/jboss-ejb3-ext-api.git</connection>
+      <developerConnection>scm:git:git@github.com:jbossejb3/jboss-ejb3-ext-api.git</developerConnection>
+      <url>http://github.com/jbossejb3/jboss-ejb3-ext-api</url>
+   </scm>
 </project>

@@ -1,7 +1,5 @@
 package org.jboss.ejb3.extapi.testcompilation;
 
-import javax.ejb.ActivationConfigProperty;
-
 import org.jboss.ejb3.annotation.AspectDomain;
 import org.jboss.ejb3.annotation.Cache;
 import org.jboss.ejb3.annotation.CacheConfig;
@@ -13,7 +11,6 @@ import org.jboss.ejb3.annotation.DeliveryMode;
 import org.jboss.ejb3.annotation.Depends;
 import org.jboss.ejb3.annotation.IIOP;
 import org.jboss.ejb3.annotation.IgnoreDependency;
-import org.jboss.ejb3.annotation.JndiBindingPolicy;
 import org.jboss.ejb3.annotation.JndiInject;
 import org.jboss.ejb3.annotation.LocalBinding;
 import org.jboss.ejb3.annotation.LocalHomeBinding;
@@ -37,7 +34,8 @@ import org.jboss.ejb3.annotation.defaults.ClusteredDefaults;
 import org.jboss.ejb3.annotation.defaults.PersistenceManagerDefaults;
 import org.jboss.ejb3.annotation.defaults.PoolDefaults;
 import org.jboss.ejb3.annotation.defaults.RemoteBindingDefaults;
-import org.jboss.metadata.ejb.jboss.jndipolicy.spi.DefaultJndiBindingPolicy;
+
+import javax.ejb.ActivationConfigProperty;
 
 /**
  * A Test Object for compilation only to ensure that the 
@@ -60,7 +58,7 @@ import org.jboss.metadata.ejb.jboss.jndipolicy.spi.DefaultJndiBindingPolicy;
 {@ActivationConfigProperty(propertyName = "propertyName", propertyValue = "propertyValue")})
 @Depends("DependencyON")
 @IIOP(interfaceRepositorySupported = false, poa = IIOP.POA_PER_SERVANT)
-@JndiBindingPolicy(policy = DefaultJndiBindingPolicy.class)
+//@JndiBindingPolicy(policy = DefaultJndiBindingPolicy.class)
 @LocalBinding(jndiBinding = "localJndiName")
 @LocalHomeBinding(jndiBinding = "localHomeJndiName")
 @Management(value = Object.class)

@@ -26,8 +26,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.jboss.metadata.ejb.jboss.jndipolicy.spi.DefaultJndiBindingPolicy;
-
 /**
  * Annotation for specifying that an EJB should use a 
  * specified JNDI Binding Policy when determining default 
@@ -47,6 +45,6 @@ public @interface JndiBindingPolicy {
     * 
     * @return
     */
-   Class<? extends DefaultJndiBindingPolicy> policy();
+   //Class<? extends DefaultJndiBindingPolicy> policy();
 
 }
