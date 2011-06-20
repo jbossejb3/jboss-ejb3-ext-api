@@ -5,6 +5,8 @@ import org.jboss.ejb3.annotation.RunAsPrincipal;
 import org.jboss.ejb3.annotation.SecurityDomain;
 import org.jboss.ejb3.annotation.TransactionTimeout;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * A Test Object for compilation only to ensure that the 
  * External API does not contain any dependencies
@@ -19,7 +21,7 @@ import org.jboss.ejb3.annotation.TransactionTimeout;
 @ResourceAdapter("resourceAdaptor")
 @RunAsPrincipal("principalName")
 @SecurityDomain(value="securityDomain",unauthenticatedPrincipal="unAuthPrincipal")
-@TransactionTimeout(value=0)
+@TransactionTimeout(value = 0, unit = TimeUnit.MINUTES)
 public class TestCompilationBean
 {
 }

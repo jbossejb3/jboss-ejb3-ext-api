@@ -21,20 +21,35 @@
  */
 package org.jboss.ejb3.annotation;
 
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.concurrent.TimeUnit;
+
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Annotation for specifying the transaction timeout of an EJB business method
+ * Annotation for specifying the transaction timeout of a newly started
+ * transaction when invoking an EJB business method.
  * 
  * @author <a href="mailto:bill.decoste@jboss.org">William DeCoste</a>
- * @version $Revision$
  */
-@Target(
-{ElementType.METHOD, ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
+@Target({METHOD, TYPE})
+@Retention(RUNTIME)
 public @interface TransactionTimeout {
-   int value() default 0;
+    /**
+     * The new timeout value, in seconds. If this parameter
+     * is <code>0</code>, the timeout value is reset to the default
+     * value.
+     *
+     * @see javax.transaction.TransactionManager#setTransactionTimeout(int) 
+     */
+    long value() default 0;
+
+    /**
+     * Units used for the specified value.
+     * @since 2.0
+     */
+    TimeUnit unit() default TimeUnit.SECONDS;
 }
