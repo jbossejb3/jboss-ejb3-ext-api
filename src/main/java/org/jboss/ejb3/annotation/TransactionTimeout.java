@@ -48,7 +48,9 @@ public @interface TransactionTimeout {
     long value() default 0;
 
     /**
-     * Units used for the specified value.
+     * Units used for the specified value. The minimum granularity is
+     * <code>SECONDS</code>, specifying a lower one will result in a deployment
+     * failure.
      * @since 2.0
      */
     TimeUnit unit() default TimeUnit.SECONDS;
