@@ -35,27 +35,4 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Clustered {
-    /**
-     * The {@link LoadBalancePolicy} implementation to use for balancing remote bean invocations.
-     * <p>
-     * Specifying the <code>LoadBalancePolicy</code> interface itself (which is the default value) means the EJB container
-     * should pick a sensible default based on the type of the bean.
-     * </p>
-     * 
-     * @return the class of the <code>LoadBalancePolicy</code> implementation, or, if it is up to the container to choose an
-     *         appropriate policy, the class of the <code>LoadBalancePolicy</code> interface itself.
-     */
-    String loadBalancePolicy();
-
-    /**
-     * The {@link LoadBalancePolicy} implementation to use for balancing remote home invocations.
-     * <p>
-     * Specifying the <code>LoadBalancePolicy</code> interface itself (which is the default value) means the EJB container
-     * should pick a sensible default based on the type of the bean.
-     * </p>
-     * 
-     * @return the class of the <code>LoadBalancePolicy</code> implementation, or, if it is up to the container to choose an
-     *         appropriate policy, the class of the <code>LoadBalancePolicy</code> interface itself.
-     */
-    String homeLoadBalancePolicy();
 }

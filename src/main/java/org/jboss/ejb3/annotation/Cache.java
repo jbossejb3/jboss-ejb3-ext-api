@@ -35,8 +35,11 @@ import java.lang.annotation.Target;
  * @version $Revision$
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(
-{ElementType.TYPE})
+@Target(ElementType.TYPE)
 public @interface Cache {
-   String value();
+    /**
+     * Identifies the name of the cache.
+     * @return a cache name
+     */
+    String value();
 }
