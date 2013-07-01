@@ -1,5 +1,6 @@
 package org.jboss.ejb3.extapi.testcompilation;
 
+import org.jboss.ejb3.annotation.DeliveryActive;
 import org.jboss.ejb3.annotation.ResourceAdapter;
 import org.jboss.ejb3.annotation.RunAsPrincipal;
 import org.jboss.ejb3.annotation.SecurityDomain;
@@ -22,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 @RunAsPrincipal("principalName")
 @SecurityDomain(value="securityDomain",unauthenticatedPrincipal="unAuthPrincipal")
 @TransactionTimeout(value = 0, unit = TimeUnit.MINUTES)
+@DeliveryActive(false)
 public class TestCompilationBean
 {
 }
